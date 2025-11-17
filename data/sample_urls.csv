@@ -1,0 +1,11 @@
+url,label
+http://login-secure.example.com/verify,1
+http://secure-paypal.example.org/login,1
+http://update-account.example.net/index.php,1
+http://xn--bank-login-123.com/confirm,1
+http://free-gift.example.com/claim,1
+https://www.google.com/search?q=python,0
+https://github.com/user/repo,0
+https://en.wikipedia.org/wiki/Phishing,0
+https://stackoverflow.com/questions/12345/example,0
+https://example.com/about,0
