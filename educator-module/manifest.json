@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing Educator Module",
+  "version": "1.0.0",
+  "description": "Educates users about phishing when a suspicious site is detected.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_title": "Phishing Educator",
+    "default_popup": "src/educator/index.html"
+  },
+  "icons": {
+    "16": "src/educator/assets/icons/warning.svg",
+    "48": "src/educator/assets/icons/warning.svg",
+    "128": "src/educator/assets/icons/warning.svg"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/educator/*",
+        "src/translations/*",
+        "src/educator/assets/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/detector-connector.js"]
+    }
+  ]
+}

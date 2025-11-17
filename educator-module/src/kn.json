@@ -1,0 +1,29 @@
+# generate_tts.py
+from gtts import gTTS
+import os
+
+# Map language codes to human names and default messages.
+LANG_MESSAGES = {
+    "en": ("English", "Warning: This link may be a phishing attempt. Be careful before entering any credentials."),
+    "hi": ("Hindi", "चेतावनी: यह लिंक फ़िशिंग हो सकता है। कृपया किसी भी संवेदनशील जानकारी को दर्ज करने से पहले सावधान रहें।"),
+    "kn": ("Kannada", "ಎಚ್ಚರಿಕೆ: ಈ ಕೊಂಡಿ ಫಿಶಿಂಗ್ ಆಗಿರಬಹುದು. ಯಾವುದೇ ಸಾಂಕೇತಿಕ ಮಾಹಿತಿಯನ್ನು ನಮೂದಿಸುವ ಮುನ್ನ ಎಚ್ಚರಿಕೆ ವಹಿಸಿ."),
+    "te": ("Telugu", "హెచ్చరిక: ఈ లింక్ ఫిషింగ్ అయి ఉండొచ్చు. ఏవైనా సున్నితమైన వివరాలు నమోదు చేయడానికి ముందు జాగ్రత్తగా ఉండండి.")
+}
+
+OUTPUT_DIR = "warning_audios"
+
+def ensure_dir(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+def generate_all():
+    ensure_dir(OUTPUT_DIR)
+    for code, (name, message) in LANG_MESSAGES.items():
+        filename = os.path.join(OUTPUT_DIR, f"warning_{code}.mp3")
+        print(f"Generating {filename} ({name})...")
+        tts = gTTS(text=message, lang=code, slow=False)
+        tts.save(filename)
+    print("Done. Audio files saved in:", OUTPUT_DIR)
+
+if _name_ == "_main_":
+    generate_all()

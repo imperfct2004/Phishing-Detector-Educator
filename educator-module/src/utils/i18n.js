@@ -1,0 +1,1 @@
+async function loadTranslations(lang='en'){ try { const r = await fetch(`../translations/${lang}.json`); if(!r.ok) throw 0; return await r.json(); }catch(e){ return (await (await fetch('../translations/en.json')).json()); } }

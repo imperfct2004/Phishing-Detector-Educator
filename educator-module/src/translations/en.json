@@ -1,0 +1,12 @@
+{
+  "title": "⚠️ Phishing Alert!",
+  "description": "This website may try to steal your personal information like bank or login details.",
+  "section1": {
+    "title": "What is Phishing?",
+    "content": "Phishing is a fraudulent attempt to obtain sensitive information by pretending to be a trustworthy entity."
+  },
+  "section2": {
+    "title": "How to Identify Fake Websites?",
+    "content": "Always check the website URL carefully, look for HTTPS, and avoid clicking unknown or suspicious links."
+  }
+}
