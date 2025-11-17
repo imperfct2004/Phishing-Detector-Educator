@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phishing Educator</title>
+  <link rel="stylesheet" href="educator.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/icons/warning.svg" alt="Warning" class="icon" />
+    <h2 id="title">⚠️ Phishing Alert!</h2>
+    <p id="description">This website may try to steal your personal information.</p>
+
+    <div id="content-section"></div>
+
+    <div class="audio-section">
+      <button id="play-audio">🔊 Play Audio</button>
+    </div>
+
+    <div class="lang-toggle">
+      <label for="language">Language:</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="kn">Kannada</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+        <option value="te">Telugu</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="../utils/i18n.js"></script>
+  <script src="educator.js"></script>
+</body>
+</html>
